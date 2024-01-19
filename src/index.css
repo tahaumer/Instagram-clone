@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  background-color: #000000;
+}
+.body {
+  margin-left: 245px;
+}
+.transitionCs {
+  transition: all ease-in-out 200ms;
+}
+.sidebar{
+    width: 245px;
+    transition: all ease-in-out 200ms;
+    border-right: 1px#262626 solid;
+}
+.sidebar.deactive{
+    width: 75px;
+    transition: all ease-in-out 200ms;
+    border-right: 1px#262626 solid;
+}
