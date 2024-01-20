@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
 // media's
@@ -15,6 +15,11 @@ import profileImage from '../media/profileImage.jpg'
 import threadIcon from '../media/thread.svg'
 import moreIcon from '../media/more.svg'
 import user from '../media/user.jpg'
+import settingIcon from '../media/Settings-1.svg'
+import activityIcon from '../media/Your activity.svg'
+import savedIcon from '../media/Save.svg'
+import themeIcon from '../media/Theme icon.svg'
+import reportIcon from '../media/Report a problem.svg'
 
 const Sidebar = () => {
     
@@ -69,6 +74,29 @@ const Sidebar = () => {
         sidebar.classList.toggle('deactive', isNotificationbarOpen);
         notification.classList.toggle('border', isNotificationbarOpen);
     };
+    useEffect(() => {
+        const closeMenuOnOutsideClick = (event) => {
+            const settingbar = document.getElementById('settingbar');
+            const menuButton = document.getElementById('menuButton');
+
+            if (settingbar && !settingbar.contains(event.target) && !menuButton.contains(event.target)) {
+                settingbar.classList.add('hidden');
+            }
+        };
+
+        document.addEventListener('click', closeMenuOnOutsideClick);
+
+        return () => {
+            document.removeEventListener('click', closeMenuOnOutsideClick);
+        };
+    }, []);
+
+    const showMenu = () => {
+        const settingbar = document.getElementById('settingbar');
+        if(settingbar) {
+            settingbar.classList.toggle('hidden');
+        }
+    }
     
     
 
@@ -103,10 +131,12 @@ const Sidebar = () => {
             <img className='group-hover:scale-105' src={exploreIcon} alt="" />
             <h2 className='ml-4 navItems'> Explore</h2>
         </NavLink>
-        <Link to="#" className='group flex mt-2 items-end pl-3 hover:bg-[#1A1A1A] transitionCs py-3 rounded-lg'>
+        <NavLink to="/reels"  className={({ isActive }) =>
+          isActive ? "group flex mt-2 items-end pl-3 hover:bg-[#1A1A1A] transitionCs py-3 rounded-lg font-bold" : "group flex mt-2 items-end pl-3 hover:bg-[#1A1A1A] transitionCs py-3 rounded-lg"
+       }>
             <img className='group-hover:scale-105' src={reelsIcon} alt="" />
-            <h2 className='ml-4 font-semibold navItems'> Reels</h2>
-        </Link>
+            <h2 className='ml-4 navItems'> Reels</h2>
+        </NavLink>
         <Link to="#" className='group flex mt-2 items-end pl-3 hover:bg-[#1A1A1A] transitionCs py-3 rounded-lg'>
             <img className='group-hover:scale-105' src={messageIcon} alt="" />
             <h2 className='ml-4 font-semibold navItems'> Messages</h2>
@@ -269,10 +299,51 @@ const Sidebar = () => {
             <img className='group-hover:scale-105' src={threadIcon} alt="" />
             <h2 className='ml-4 font-semibold navItems'> Threads</h2>
         </Link>
-        <Link to="#" className='group flex mt-2 items-end pl-3 hover:bg-[#1A1A1A] transitionCs py-3 rounded-lg'>
-            <img className='group-hover:scale-105' src={moreIcon} alt="" />
-            <h2 className='ml-4 font-semibold navItems'> More</h2>
-        </Link>
+        <div className='group mt-2 items-end transitionCs relative mb-2'>
+            <div onClick={showMenu} id='menuButton' className='flex group-hover:bg-[#1A1A1A] pl-3 py-3 w-full rounded-lg cursor-pointer'>
+                <img className='group-hover:scale-105' src={moreIcon} alt="" />
+                <h2 className='ml-4 font-semibold navItems'> More</h2>
+            </div>
+            <div id='settingbar' className='absolute bg-[#262626] bottom-10 rounded-2xl py-2 z-20 hidden'>
+                <ul className='w-[250px] divide-[#353535]'>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl '> 
+                        <img src={settingIcon} alt="" />
+                        <p className='ml-4 text-sm'>Settings</p>
+                    </li>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl '> 
+                        <img src={activityIcon} alt="" />
+                        <p className='ml-4 text-sm'>Your Activity</p>
+                    </li>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl '> 
+                        <img src={savedIcon} alt="" />
+                        <p className='ml-4 text-sm'>Saved</p>
+                    </li>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl relative group/item cursor-default'> 
+                        <img src={themeIcon} alt="" />
+                        <p className='ml-4 text-sm'>Switch appearance</p>
+                        <div className='hidden absolute w-[200px] bg-[#3C3C3C] group-hover/item:flex justify-between px-3 py-[14px] mx-2 rounded-xl -right-40 top-0 text-sm'>
+                            <p>Dark mode</p>
+                            <label className="switch">
+                                <input type="checkbox" />
+                                <span className="slider round" />
+                            </label>
+                        </div>
+                    </li>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl mb-2'> 
+                        <img src={reportIcon} alt="" />
+                        <p className='ml-4 text-sm'>Report a problem</p>
+                    </li>
+                    <span className='bg-[#353535] h-1 w-full block'/>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl my-2'> 
+                        <p className='ml-4 text-sm'>Switch accounts</p>
+                    </li>
+                    <hr/>
+                    <li className='transitionCs hover:bg-[#3C3C3C] flex pl-3 py-4 mx-2 rounded-xl mt-2'> 
+                        <p className='ml-4 text-sm'>log out</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
   )
 }

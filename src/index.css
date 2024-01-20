@@ -21,3 +21,161 @@ body {
     transition: all ease-in-out 200ms;
     border-right: 1px#262626 solid;
 }
+.instaGradient{
+  background-image: linear-gradient(
+    45deg,
+    hsl(44deg 99% 73%) 0%,
+    hsl(41deg 97% 69%) 2%,
+    hsl(38deg 97% 66%) 3%,
+    hsl(35deg 97% 62%) 5%,
+    hsl(32deg 96% 60%) 7%,
+    hsl(29deg 96% 57%) 10%,
+    hsl(26deg 96% 55%) 13%,
+    hsl(18deg 97% 59%) 16%,
+    hsl(9deg 95% 62%) 19%,
+    hsl(358deg 91% 63%) 23%,
+    hsl(349deg 84% 59%) 28%,
+    hsl(341deg 77% 54%) 33%,
+    hsl(333deg 68% 50%) 40%,
+    hsl(327deg 73% 47%) 48%,
+    hsl(321deg 77% 45%) 57%,
+    hsl(315deg 76% 43%) 66%,
+    hsl(307deg 71% 42%) 74%,
+    hsl(296deg 65% 42%) 80%,
+    hsl(283deg 61% 47%) 86%,
+    hsl(276deg 55% 50%) 89%,
+    hsl(268deg 56% 52%) 93%,
+    hsl(260deg 57% 55%) 95%,
+    hsl(252deg 58% 57%) 97%,
+    hsl(244deg 59% 58%) 99%,
+    hsl(235deg 61% 57%) 100%
+  );
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 37px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #F9FAFA;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 3px;
+  background-color: black;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.switch input:checked + .slider {
+  background-color: #b5b5b5 ;
+}
+
+.switch input:checked + .slider:before  {
+  background-color: white;
+}
+
+.switch input:checked + .slider:before {
+  -webkit-transform: translateX(16px);
+  -ms-transform: translateX(16px);
+  transform: translateX(16px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.reel{
+  box-shadow: 1px -1px 42px -6px rgba(122,122,122,0.75);
+  -webkit-box-shadow: 1px -1px 42px -6px rgba(122,122,122,0.75);
+  -moz-box-shadow: 1px -1px 42px -6px rgba(122,122,122,0.75);
+}
+
+/* Video controls */
+
+.video {
+  width: 100%;
+  height: 100%;
+}
+
+/* Controls */
+/* 
+.controlsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: transparent;
+  margin-top: -50vw;
+  padding: 0 40px;
+  z-index: 20;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-top: 40rem;
+  margin: auto;
+}
+
+.controlsIcon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.controlsIcon--small {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  margin-left: 10rem;
+  margin-right: 10rem;
+} */
+
+/* The time controls section */
+
+.time_progressbarContainer {
+  background-color: gray;
+  width: 400px;
+  height: 3px;
+  z-index: 30;
+  position: relative;
+}
+
+.time_progressBar {
+  background-color: red;
+  height: 100%;
+}
+
+.controlsTime {
+  color: white;
+}
