@@ -12,11 +12,11 @@ const Home = () => {
   }, []);
   return (
     <Layout>
-        <div className='body flex pt-7'>
+        <div className='body dark:bg-black bg-white flex pt-7'>
               <div className='w-full flex justify-center'>
                 <MainBody/>
               </div>
-              <div className='w-[750px]'>
+              <div className='w-[750px] hidden lg:block'>
                 <div className='w-[70%]'>
                   <div className='pl-6 pt-2 pb-5 flex justify-between items-center'>
                       <div className='flex items-center'>

@@ -1,5 +1,6 @@
 import React from 'react'
 import Sidebar from './Sidebar'
+import Bottombar from './Bottombar'
 
 const Layout = ({children}) => {
   return (
@@ -8,6 +9,7 @@ const Layout = ({children}) => {
           <main >
             {children}
           </main>
+          <Bottombar/>
       </div>
   )
 }

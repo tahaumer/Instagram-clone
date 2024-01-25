@@ -1,10 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+/* 
 body {
   background-color: #000000;
-}
+} */
 .body {
   margin-left: 245px;
 }
@@ -21,6 +21,7 @@ body {
     transition: all ease-in-out 200ms;
     border-right: 1px#262626 solid;
 }
+
 .instaGradient{
   background-image: linear-gradient(
     45deg,
@@ -126,46 +127,9 @@ body {
   height: 100%;
 }
 
-/* Controls */
-/* 
-.controlsContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  background-color: transparent;
-  margin-top: -50vw;
-  padding: 0 40px;
-  z-index: 20;
-}
-
-.controls {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  padding-top: 40rem;
-  margin: auto;
-}
-
-.controlsIcon {
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-
-.controlsIcon--small {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  margin-left: 10rem;
-  margin-right: 10rem;
-} */
-
-/* The time controls section */
-
 .time_progressbarContainer {
   background-color: gray;
-  width: 400px;
+  width: 100%;
   height: 3px;
   z-index: 30;
   position: relative;
@@ -178,4 +142,41 @@ body {
 
 .controlsTime {
   color: white;
+}
+
+.swipercustom{
+  overflow: visible !important;
+}
+
+@media screen and (max-width: 1280px) and (min-width:768px) {
+  .sidebar {
+    width: 75px;
+    transition: all ease-in-out 200ms;
+    border-right: 1px#262626 solid;
+  }
+  .navItems{
+    display: none;
+  }
+  .navhead{
+    display: none;
+  }
+  .body {
+    margin-left: 75px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .sidebar{
+    display: none;
+  }
+  .navItems{
+    display: none;
+  }
+  .navhead{
+    display: none;
+  }
+  .body {
+    margin-left: 0px;
+    margin-bottom: 100px;
+  }
+
 }
