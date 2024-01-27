@@ -1,10 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-body {
-  background-color: #000000;
-} */
+@layer utilities{
+  body{
+      @apply dark:bg-black bg-white;
+  }
+}
 .body {
   margin-left: 245px;
 }
@@ -14,12 +15,10 @@ body {
 .sidebar{
     width: 245px;
     transition: all ease-in-out 200ms;
-    border-right: 1px#262626 solid;
 }
 .sidebar.deactive{
     width: 75px;
     transition: all ease-in-out 200ms;
-    border-right: 1px#262626 solid;
 }
 
 .instaGradient{
@@ -28,8 +27,8 @@ body {
     hsl(44deg 99% 73%) 0%,
     hsl(41deg 97% 69%) 2%,
     hsl(38deg 97% 66%) 3%,
-    hsl(35deg 97% 62%) 5%,
-    hsl(32deg 96% 60%) 7%,
+    hsl(35deg 97% 62%) 10%,
+    hsl(32deg 96% 60%) 10%,
     hsl(29deg 96% 57%) 10%,
     hsl(26deg 96% 55%) 13%,
     hsl(18deg 97% 59%) 16%,

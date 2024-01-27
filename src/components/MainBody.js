@@ -3,11 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 //media
-import notificationIcon from "../media/Notifications.svg";
-import commentIcon from "../media/Comment.svg";
-import ShareIcon from "../media/Share Post-1.svg";
-import saveIcon from "../media/Save.svg";
 import user from "../media/user.jpg";
+import {NotificationIcon, ShareIcon, SavedIcon,CommentIcon} from '../media/svg'
+
 
 const MainBody = () => {
   const userData = [
@@ -81,13 +79,13 @@ const MainBody = () => {
         className="w-full md:w-[650px] mb-10 "
       >
         {userData.map((user, index) => (
-          <SwiperSlide key={index}>
-            <div className="text-white px-6 flex flex-col items-center cursor-pointer">
+          <SwiperSlide key={index} className="text-black dark:text-white">
+            <div className="px-6 flex flex-col items-center cursor-pointer">
               <div className="w-[62px] rounded-full overflow-hidden instaGradient p-[2px] ">
                 <img
                   src={user.imageUrl}
                   alt=""
-                  className="rounded-full border-[3px] border-black "
+                  className="rounded-full border-[3px] border-white dark:border-black "
                 />
               </div>
               <h2 className="text-[11px]">{user.username}</h2>
@@ -98,7 +96,7 @@ const MainBody = () => {
       {postData.map((post, index) => (
         <div
           key={index}
-          className="text-white w-[466px] mx-auto divide-[#262626]"
+          className="w-[466px] mx-auto divide-[#737373]"
         >
           <div className="flex items-center justify-between mb-2">
             <div className="flex items-center">
@@ -106,40 +104,40 @@ const MainBody = () => {
                 <img
                   src={post.imageUrl}
                   alt=""
-                  className="rounded-full border-[3px] border-black"
+                  className="rounded-full border-[3px] border-white dark:border-black"
                 />
               </div>
-              <h2 className="text-sm ml-3 font-semibold cursor-pointer">
-                {post.username} <span className="text-[#9C9C9C]">• 4h</span>
+              <h2 className="text-sm ml-3 dark:text-white text-black font-semibold cursor-pointer">
+                {post.username} <span className="text-[#737373]">• 4h</span>
               </h2>
             </div>
             <div className="flex cursor-pointer py-1">
-              <span className="h-[3px] w-[3px] block bg-white rounded-full mx-[2px]"></span>
-              <span className="h-[3px] w-[3px] block bg-white rounded-full mx-[2px]"></span>
-              <span className="h-[3px] w-[3px] block bg-white rounded-full mx-[2px]"></span>
+              <span className="h-[3px] w-[3px] block dark:bg-white bg-black rounded-full mx-[2px]"></span>
+              <span className="h-[3px] w-[3px] block dark:bg-white bg-black rounded-full mx-[2px]"></span>
+              <span className="h-[3px] w-[3px] block dark:bg-white bg-black rounded-full mx-[2px]"></span>
             </div>
           </div>
-          <div className="h-[450px] w-full border border-[#262626] text-center mb-2">
+          <div className="h-[450px] w-full text-center mb-2 bg-[#383838] text-[#ffffff86]">
             -- image here --
           </div>
           <div className="flex justify-between mb-2">
             <div className="flex gap-4">
-              <img className="cursor-pointer" src={notificationIcon} alt="" />
-              <img className="cursor-pointer" src={commentIcon} alt="" />
-              <img className="cursor-pointer" src={ShareIcon} alt="" />
+             <NotificationIcon/>
+              <CommentIcon/>
+              <ShareIcon/>
             </div>
             <div>
-              <img className="cursor-pointer" src={saveIcon} alt="" />
+              <SavedIcon/>
             </div>
           </div>
-          <h3 className="font-semibold text-sm mb-1">{post.postLikes} likes</h3>
-          <h3 className="font-medium text-[14px] text-[#A8A8A8] cursor-pointer">
+          <h3 className="font-semibold text-sm mb-1 dark:text-white text-black">{post.postLikes} likes</h3>
+          <h3 className="font-medium text-[14px] text-[#737373] cursor-pointer">
             View all {post.postComments} comments
           </h3>
           <input
             type="text"
             placeholder="Add a comment..."
-            className="bg-transparent text-[14px] w-full outline-0"
+            className="bg-transparent text-[14px] w-full outline-0 placeholder:text-[#737373]"
           />
           <hr className="my-4" />
         </div>

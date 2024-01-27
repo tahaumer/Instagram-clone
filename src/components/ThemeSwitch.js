@@ -35,7 +35,7 @@ const ThemeSwitch = () => {
         <input type="checkbox" checked={theme === 'dark'} onChange={handleThemeSwitch} />
         <span className="slider round" />
       </label>
-      <span className="ml-2">{theme === 'dark' ? 'Dark Mode' : 'Light Mode'}</span>
+      
     </div>
   );
 };

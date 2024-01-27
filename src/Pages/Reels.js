@@ -6,6 +6,7 @@ import { Mousewheel, Keyboard } from "swiper/modules";
 import "swiper/css";
 
 //media
+import {ShareIcon,MoreDotIcon,SavedIcon,CommentIcon,NotificationIcon} from '../media/svg'
 import reelvideo from "../media/reel1.mp4";
 import reelvideo2 from "../media/reel2.mp4";
 import reelvideo3 from "../media/reel3.mp4"
@@ -14,11 +15,6 @@ import user from "../media/user.jpg";
 import audioIcon from "../media/Audio image.svg";
 import audioPlayingIcon from "../media/Audio is playing.svg";
 import audioMutedIcon from "../media/Audio is muted.svg";
-import notificationIcon from '../media/Notifications.svg'
-import commentIcon from '../media/Comment.svg'
-import ShareIcon from '../media/Share Post-1.svg'
-import saveIcon from '../media/Save.svg'
-import moreIcon from '../media/MoreDots.svg'
 import closeIcon from '../media/close.svg'
 
 const Reels = () => {
@@ -166,23 +162,7 @@ const Reels = () => {
       }
     });
   };
-  const [isCommentSectionOpen, setIsCommentSectionOpen] = useState(false);
-  const commentSectionRef = useRef(null);
-  const toggleCommentSection = () => {
-    setIsCommentSectionOpen(!isCommentSectionOpen);
-  };
-  const handleClickOutside = (event) => {
-    if (commentSectionRef.current && !commentSectionRef.current.contains(event.target)) {
-      setIsCommentSectionOpen(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+  
 
 const showComment = (index) => {
   const commentSection = document.getElementById(`commentSection-${index}`);
@@ -190,6 +170,13 @@ const showComment = (index) => {
     commentSection.classList.toggle("hidden");
   }
 };
+
+const moreReelToggle = (index) => {
+  const moreSection = document.getElementById(`moreSection-${index}`);
+  if (moreSection) {
+    moreSection.classList.toggle("hidden");
+  }
+}
 
   return (
     <Layout>
@@ -240,16 +227,16 @@ const showComment = (index) => {
                     Original audio
                   </span>
                 </div>
-                <div className="absolute right-2 bottom-3 md:right-10 md:bottom-0 text-white flex flex-col justify-center items-center text-center font-light text-sm space-y-5">
+                <div className="absolute right-2 bottom-3 md:right-10 md:bottom-0 dark:text-white flex flex-col justify-center items-center text-center font-normal text-sm space-y-5">
                   <div className="cursor-pointer hover:brightness-75">
-                    <img src={notificationIcon} alt="" />
+                    <NotificationIcon/>
                     <p className="pt-1">{video.heartCount}</p>
                   </div>
                   <div onClick={() => showComment(index)} className="cursor-pointer group relative">
-                    <img src={commentIcon} alt="" />
+                    <CommentIcon/>
                     <p className="pt-1 group-hover:brightness-75">{video.commentCount}</p>
                   </div>
-                  <div id={`commentSection-${index}`} className="absolute z-50 bg-[#262626] w-[300px] pl-4 pr-2 py-3 rounded-lg left-12 -top-28 hidden">
+                  <div id={`commentSection-${index}`} className="absolute z-50 dark:bg-[#262626] bg-white shadow-xl w-[300px] pl-4 pr-2 py-3 rounded-lg left-12 -top-28 hidden">
                       <div className="flex mb-3">
                         <img onClick={() => showComment(index)} className="mr-20 cursor-pointer" src={closeIcon} alt="" />
                         <h3 className="font-bold tracking-wider">Comments</h3>
@@ -262,9 +249,13 @@ const showComment = (index) => {
                           <div className="text-left ml-2 group">
                             <h3 className="font-semibold mt-4">User_121 <span className="text-[#A3A3A3]">1d</span></h3>
                             <p className="w-[190px]"> di enind dej d oe di di enind dej d oe di di enind dej d oe di </p>
-                            <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">513 likes</span>
-                            <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">Reply</span>
-                            <img className="group-hover:inline hidden" src={moreIcon} alt="" />
+                            <div className="flex">
+                              <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">513 likes</span>
+                              <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">Reply</span>
+                              <div className="group-hover:opacity-100 opacity-0 flex">
+                                  <MoreDotIcon/>
+                              </div>
+                            </div>
                           </div>
                         </div>
                         <div className="flex">
@@ -274,17 +265,51 @@ const showComment = (index) => {
                           <div className="text-left ml-2 group">
                             <h3 className="font-semibold mt-4">User_121 <span className="text-[#A3A3A3]">1d</span></h3>
                             <p className="w-[180px]"> di enind dej d oe di di enind dej d oe di di enind dej d oe di </p>
-                            <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">513 likes</span>
-                            <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">Reply</span>
-                            <img className="group-hover:inline hidden" src={moreIcon} alt="" />
+                            <div className="flex">
+                              <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">513 likes</span>
+                              <span className="text-[#A3A3A3] text-[12px] font-semibold mr-3">Reply</span>
+                              <div className="group-hover:opacity-100 opacity-0 flex">
+                                  <MoreDotIcon/>
+                              </div>
+                              
+                            </div>
                           </div>
                         </div>
                         
                       </div>
                     </div>
-                  <img className="cursor-pointer hover:brightness-75" src={ShareIcon} alt="" />
-                  <img className="cursor-pointer hover:brightness-75" src={saveIcon} alt="" />
-                  <img className="cursor-pointer hover:brightness-75" src={moreIcon} alt="" />
+                    <ShareIcon/>
+                    <SavedIcon/>
+                    <div className="relative">
+                      <div onClick={() => moreReelToggle(index)}>
+                        <MoreDotIcon />
+                      </div>
+                      <div id={`moreSection-${index}`} className='absolute left-0 bottom-8 text-black dark:text-white dark:bg-[#262626] shadow-xl bg-white rounded-2xl py-2 z-50 hidden'>
+                          <ul className='w-[250px]'>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl cursor-pointer'> 
+                                  <p className='ml-4 text-sm text-red-600'>Report</p>
+                              </li>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl cursor-pointer'> 
+                                  <p className='ml-4 text-sm text-blue-600'>Follow</p>
+                              </li>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl cursor-pointer'> 
+                                  <p className='ml-4 text-sm'>Go to post</p>
+                              </li>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl relative group/item cursor-default'> 
+                                  <p className='ml-4 text-sm'>Share to...</p>
+                              </li>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl cursor-pointer mb-2'> 
+                                  <p className='ml-4 text-sm'>Copy link</p>
+                              </li>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl cursor-pointer my-2'> 
+                                  <p className='ml-4 text-sm'>Embed</p>
+                              </li>
+                              <li className='transitionCs hover:bg-[#F2F2F2] dark:hover:bg-[#3C3C3C] flex pl-3 py-3 mx-2 rounded-xl cursor-pointer mt-2'> 
+                                  <p className='ml-4 text-sm'>About this account</p>
+                              </li>
+                          </ul>
+                      </div>
+                    </div>
                   <div className="h-[30px] w-[30px] rounded-lg overflow-hidden cursor-pointer hover:brightness-75">
                     <img src={user} alt="" />
                   </div>

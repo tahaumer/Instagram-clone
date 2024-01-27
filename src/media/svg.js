@@ -95,16 +95,68 @@ export const CreateIcon = () => (
       </svg>
     )
     export const SavedIcon= () => (
-      <svg  className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Save" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Save</title>
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Save" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Save</title>
       <polygon className='dark:stroke-white stroke-black fill-none' points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke="#F5F5F5" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px"></polygon>
       </svg>
     )
     export const ThemeIcon= () => (
-      <svg  className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Theme icon" height="18" role="img" viewBox="0 0 24 24" width="18"><title>Theme icon</title>
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Theme icon" height="18" role="img" viewBox="0 0 24 24" width="18"><title>Theme icon</title>
       <path className='dark:fill-white fill-black' d="M11.502,22.99805A11.4313,11.4313,0,0,1,.49512,14.83691a.99889.99889,0,0,1,.251-.998,1.01148,1.01148,0,0,1,.99707-.249,9.43041,9.43041,0,0,0,2.75879.40821A9.5082,9.5082,0,0,0,13.5957,1.74023a1.00039,1.00039,0,0,1,1.24707-1.248A11.501,11.501,0,0,1,11.502,22.99805ZM3.08984,15.91211A9.49991,9.49991,0,0,0,21.002,11.498,9.57875,9.57875,0,0,0,15.916,3.08594,11.5083,11.5083,0,0,1,3.08984,15.91211Z"></path>
       </svg>
     )
     export const ReportIcon= () => (
-      <svg className='dark:fill-white fill-black'  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Report a problem" height="18" role="img" viewBox="0 0 24 24" width="18"><title>Report a problem</title>
+      <svg className="dark:fill-white fill-black group-hover:scale-105"  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Report a problem" height="18" role="img" viewBox="0 0 24 24" width="18"><title>Report a problem</title>
       <path className='dark:fill-white fill-black' d="M18.001 1h-12a5.006 5.006 0 0 0-5 5v9.005a5.006 5.006 0 0 0 5 5h2.514l2.789 2.712a1 1 0 0 0 1.394 0l2.787-2.712h2.516a5.006 5.006 0 0 0 5-5V6a5.006 5.006 0 0 0-5-5Zm3 14.005a3.003 3.003 0 0 1-3 3h-2.936a1 1 0 0 0-.79.387l-2.274 2.212-2.276-2.212a1 1 0 0 0-.79-.387H6a3.003 3.003 0 0 1-3-3V6a3.003 3.003 0 0 1 3-3h12a3.003 3.003 0 0 1 3 3Zm-9-1.66a1.229 1.229 0 1 0 1.228 1.228A1.23 1.23 0 0 0 12 13.344Zm0-8.117a1.274 1.274 0 0 0-.933.396 1.108 1.108 0 0 0-.3.838l.347 4.861a.892.892 0 0 0 1.77 0l.348-4.86a1.106 1.106 0 0 0-.3-.838A1.272 1.272 0 0 0 12 5.228Z"></path></svg>
+    )
+
+    export const CommentIcon= () => (
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Comment" class="x1lliihq x1n2onr6 x5n08af" fill="currentColor" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Comment</title>
+      <path className='dark:stroke-white stroke-black fill-none' d="M20.656 17.008a9.993 9.993 0 1 0-3.59 3.615L22 22Z" stroke-linejoin="round" stroke-width="2px"></path>
+      </svg>
+    )
+
+    export const ShareIcon= () => (
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Share Post" height="24" role="img" viewBox="0 0 24 24" width="24"><title>Share Post</title>
+      <line className='dark:stroke-white stroke-black fill-none' stroke-linejoin="round" stroke-width="2px" x1="22" x2="9.218" y1="3" y2="10.083"></line>
+      <polygon className='dark:stroke-white stroke-black fill-none' points="11.698 20.334 22 3.001 2 3.001 9.218 10.084 11.698 20.334" stroke-linejoin="round" stroke-width="2px"></polygon>
+      </svg>
+    )
+
+    export const TagIcon= () => (
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="" height="12" role="img" viewBox="0 0 24 24" width="12"><title></title>
+      <path className='dark:stroke-white stroke-black fill-none' d="M10.201 3.797 12 1.997l1.799 1.8a1.59 1.59 0 0 0 1.124.465h5.259A1.818 1.818 0 0 1 22 6.08v14.104a1.818 1.818 0 0 1-1.818 1.818H3.818A1.818 1.818 0 0 1 2 20.184V6.08a1.818 1.818 0 0 1 1.818-1.818h5.26a1.59 1.59 0 0 0 1.123-.465Z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px"></path>
+      <path className='dark:stroke-white stroke-black fill-none' d="M18.598 22.002V21.4a3.949 3.949 0 0 0-3.948-3.949H9.495A3.949 3.949 0 0 0 5.546 21.4v.603" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px"></path>
+      <circle className='dark:stroke-white stroke-black fill-none' cx="12.072" cy="11.075" r="3.556" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px"></circle>
+      </svg>
+    )
+
+    export const PlusIcon= () => (
+      <svg className="fill-[#C7C7C7] group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="Plus icon" height="44" role="img" viewBox="0 0 24 24" width="44"><title>Plus icon</title>
+      <path className="fill-[#C7C7C7]  group-hover:scale-105" d="M21 11.3h-8.2V3c0-.4-.3-.8-.8-.8s-.8.4-.8.8v8.2H3c-.4 0-.8.3-.8.8s.3.8.8.8h8.2V21c0 .4.3.8.8.8s.8-.3.8-.8v-8.2H21c.4 0 .8-.3.8-.8s-.4-.7-.8-.7z" ></path>
+      </svg>
+    )
+
+    export const PostIcon= () => (
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="" height="12" role="img" viewBox="0 0 24 24" width="12"><title></title>
+      <rect className='dark:stroke-white stroke-black fill-none' height="18" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" width="18" x="3" y="3"></rect>
+      <line className='dark:stroke-white stroke-black fill-none' stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" x1="9.015" x2="9.015" y1="3" y2="21"></line>
+      <line className='dark:stroke-white stroke-black fill-none' stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" x1="14.985" x2="14.985" y1="3" y2="21"></line>
+      <line className='dark:stroke-white stroke-black fill-none' stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" x1="21" x2="3" y1="9.015" y2="9.015"></line>
+      <line className='dark:stroke-white stroke-black fill-none' stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" x1="21" x2="3" y1="14.985" y2="14.985"></line>
+      </svg>
+
+    )
+
+    
+    export const SavedSmallIcon= () => (
+      <svg className="dark:fill-white fill-black group-hover:scale-105"  xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="" height="12" role="img" viewBox="0 0 24 24" width="12"><title></title>
+      <polygon className='dark:stroke-white stroke-black fill-none' points="20 21 12 13.44 4 21 4 3 20 3 20 21" stroke-linecap="round" stroke-linejoin="round" stroke-width="2px"></polygon>
+      </svg>
+    )
+    export const MoreDotIcon= () => (
+      <svg className="dark:fill-white fill-black group-hover:scale-105" xmlnsXlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" aria-label="More" height="24" role="img" viewBox="0 0 24 24" width="24"><title>More</title>
+      <circle className=" group-hover:fill-white" cx="12" cy="12" r="1.5" ></circle>
+      <circle className=" group-hover:fill-white" cx="6" cy="12" r="1.5" ></circle>
+      <circle className="group-hover:fill-white" cx="18" cy="12" r="1.5" ></circle>
+      </svg>
     )

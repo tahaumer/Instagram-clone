@@ -12,7 +12,7 @@ const PostsSection = () => (
           src={user}
           alt=""
         />
-        <div className="absolute top-1/2 left-[35%] justify-center items-center transitionCs hidden md:flex">
+        <div className="absolute hidden md:flex">
           <div className="group-hover:flex hidden text-white mr-4">
             <img className=" w-[20px] mr-1" src={heartIcon} alt="" />
             120
