@@ -1,0 +1,48 @@
+.input-container {
+  position: relative;
+  width: 259px;
+  margin-bottom: 7px;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 9px 8px 7px;
+  background-color: #FAFAFA;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 4px;
+  outline: none;
+  font-size: 13px;
+}
+
+.input-container label {
+  position: absolute;
+  top: 50%;
+  left: 8px;
+  transform: translateY(-50%);
+  background-color: #FAFAFA;
+  padding: 0 4px;
+  transition: all 0.2s ease;
+  font-size: 13px;
+  color: #999;
+  pointer-events: none;
+}
+
+.input-container input:focus+label,
+.input-container input:not(:placeholder-shown)+label {
+  top: 5px;
+  left: 2px;
+  font-size: 10px;
+  color: #999;
+}
+
+.image-fade {
+  position: absolute;
+  top: 1.7rem;
+  right: 59px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image-fade-active {
+  opacity: 1;
+}
